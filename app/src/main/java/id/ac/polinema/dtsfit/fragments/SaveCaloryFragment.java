@@ -52,7 +52,6 @@ public class SaveCaloryFragment extends Fragment {
         Bundle bundle = new Bundle();
         // TODO: pass object calory dengan menggunakan bundle.putParcelable
         bundle.putParcelable(Constant.ARG_CALORY, calory);
-
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -100,7 +99,8 @@ public class SaveCaloryFragment extends Fragment {
                     calory = new Calory();
                 }
                 // TODO: Ambil nilai calory yang didapatkan dari tampilan
-
+                calory.setFood(foodText.getText().toString());
+                calory.setCalory(Integer.parseInt(caloryText.getText().toString()));
                 mListener.onSaveMenuClicked(getView(), calory);
             }
         }
